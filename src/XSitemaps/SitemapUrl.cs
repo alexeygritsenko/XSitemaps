@@ -48,39 +48,12 @@ namespace XSitemaps
         /// <param name="modifiedAt">The date of last modification of the file.</param>
         /// <param name="frequency">How frequently the page is likely to change.</param>
         /// <param name="priority">The priority of this URL relative to other URLs on your site.</param>
-        public SitemapUrl(string location, DateTimeOffset? modifiedAt = null, ChangeFrequency frequency = XSitemaps.ChangeFrequency.Never, double priority = 0.5)
+        public SitemapUrl(string location, DateTimeOffset? modifiedAt = null, ChangeFrequency? frequency = null, double? priority = null)
         {
             this.Location = location;
             this.LastModifiedAt = modifiedAt;
             this.ChangeFrequency = frequency;
             this.Priority = priority;
-        }
-
-        /// <summary>
-        /// Creates instance.
-        /// </summary>
-        /// <param name="location">URL of the page.</param>
-        /// <param name="modifiedAt">The date of last modification of the file.</param>
-        /// <param name="frequency">How frequently the page is likely to change.</param>
-        /// <param name="priority">The priority of this URL relative to other URLs on your site.</param>
-        private SitemapUrl(string location, DateTimeOffset? modifiedAt = null, ChangeFrequency? frequency = null, double? priority = null)
-        {
-            this.Location = location;
-            this.LastModifiedAt = modifiedAt;
-            this.ChangeFrequency = frequency;
-            this.Priority = priority;
-        }
-
-        /// <summary>
-        /// Creates an instance with optional parameters.
-        /// </summary>
-        /// <param name="location">URL of the page.</param>
-        /// <param name="modifiedAt">The date of last modification of the file.</param>
-        /// <param name="frequency">How frequently the page is likely to change.</param>
-        /// <param name="priority">The priority of this URL relative to other URLs on your site.</param>
-        public static SitemapUrl Create(string location, DateTimeOffset? modifiedAt = null, ChangeFrequency? frequency = null, double? priority = null)
-        {
-            return new SitemapUrl(location, modifiedAt, frequency, priority);
         }
         #endregion
     }
